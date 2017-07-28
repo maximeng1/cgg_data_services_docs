@@ -16,7 +16,7 @@ search: true
 
 # Introduction
 
-Test: Welcome to our internal API documentation. This documentation is intended for both business and developer users to understand what API functionality we support and how to use it.
+Welcome to our internal API documentation. This documentation is intended for both business and developer users to understand what API functionality we support and how to use it.
 
 Currently, we have documented two API groups:
 
@@ -31,57 +31,6 @@ The Events API requires no authentication. It provides a single entry point that
 * Dialer lead generation
 * Storage of leads, application journeys in Suite CRM
 * Some custom functions for specific countries/verticals
-
-
-## Salesforce Marketing Cloud (Email)
-
-### Send Policy Documents to Customer
-
-
-> To call lambda directly:
-
-```python
-
-import lambda_service
-
-
-
-lambda_service.execute("{"ULR":}")
-
-
-```
-
-```java
-
-
-
-```
-
-> To call from API Gateway:
-
-```python
-
-import lambda_service
-
-
-
-lambda_service.execute("{"ULR":}")
-
-
-```
-
-```java
-
-
-
-```
-
-To trigger a policy document email, the following internal API must be used:
-
-
-
-
-
 
 ## Dialer Lead Generation
 
@@ -140,6 +89,57 @@ language | Required but not Used
 attributes/usercityEventName | The first event with the listed required parameters must have the usercityEventName set to 'postFromFunnel' in order to generate a TMG lead. Subsequent events can have a different type
 source_url | Used to indicate where the user dropped off on their user journey
 
+
+## Salesforce Marketing Cloud (Email)
+
+### Send Policy Documents to Customer
+
+
+> To call lambda directly:
+
+```python
+
+import lambda_service
+
+
+
+lambda_service.execute("{"ULR":}")
+
+
+```
+
+```java
+
+
+
+```
+
+> To call from API Gateway:
+
+```python
+
+import lambda_service
+
+
+
+lambda_service.execute("{"ULR":}")
+
+
+```
+
+```java
+
+
+
+```
+
+To trigger a policy document email, the following internal API must be used:
+
+
+
+
+
+
 ## Suite CRM
 
 ## Custom functions
@@ -152,215 +152,3 @@ source_url | Used to indicate where the user dropped off on their user journey
 
 
 # Data Services API
-
-## Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
