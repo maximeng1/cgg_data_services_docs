@@ -1,5 +1,4 @@
 FROM ruby:2.3.1-onbuild
-MAINTAINER Adrian Perez <adrian@adrianperez.org>
 VOLUME /usr/src/app/source
 EXPOSE 4567
 
