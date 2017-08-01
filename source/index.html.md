@@ -135,9 +135,25 @@ lambda_service.execute("{"ULR":}")
 
 To trigger a policy document email, the following internal API must be used:
 
+### Top 3 Products Reminder Email
 
+When the Events API receives the follow payload, a top-3-product email is generated.
 
+Parameter | Description
+--------- | -----------
+phone | The dialer cannot function without a phone number
+email | Usercity uses the email address field to determine unique users and merge all events associated with a user journey (within last 15 minutes together)
+vertical | Used to identify segmentation config
+locale | Used to identify segmentation config
+language | Required but not Used
+attributes/usercityEventName | The first event with the listed required parameters must have the usercityEventName set to 'postFromFunnel' in order to generate a TMG lead. Subsequent events can have a different type
+source_url | Used to indicate where the user dropped off on their user journey
 
+### Abandoned Checkout Email
+
+### Order Confirmation Email
+
+### On-boarding Emails
 
 
 ## Suite CRM
