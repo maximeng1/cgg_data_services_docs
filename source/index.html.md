@@ -20,10 +20,7 @@ Welcome to our internal API documentation. This documentation is intended for bo
 
 Currently, we have documented two API groups:
 
-1. Events API - which interacts with Usercities
-2. Data services API - which interacts with our Data warehouse
-
-# Events API
+### 1. Events API
 
 The Events API requires no authentication. It provides a single entry point that captures events from various stages of the user journey. Here is a summary of the functionality that it currently provides:
 
@@ -32,7 +29,9 @@ The Events API requires no authentication. It provides a single entry point that
 * Storage of leads, application journeys in Suite CRM
 * Some custom functions for specific countries/verticals
 
-## Dialer Lead Generation
+### 2. Data services API - which interacts with our Data warehouse
+
+# Dialer Lead Generation
 
 > Example of calling the Events API to generate a Lead in TMG
 
@@ -81,18 +80,43 @@ source_url | Used to indicate where the user dropped off on their user journey
 
 Parameter | Description
 --------- | -----------
-phone | The dialer cannot function without a phone number
-email | Usercity uses the email address field to determine unique users and merge all events associated with a user journey (within last 15 minutes together)
-vertical | Used to identify segmentation config
-locale | Used to identify segmentation config
-language | Required but not Used
-attributes/usercityEventName | The first event with the listed required parameters must have the usercityEventName set to 'postFromFunnel' in order to generate a TMG lead. Subsequent events can have a different type
-source_url | Used to indicate where the user dropped off on their user journey
+email | Usercity uses the email address field to determine unique users and merge all events
 
 
-## Salesforce Marketing Cloud (Email)
+# Salesforce Marketing Cloud (Email)
 
-### Top 3 result email that includes the top three results that customer sees on the result page can be sent after customers fill out the email and reach the result page
+## Top 3 Products Email
+
+An email listing the top 3 results page products can be generated when customers reach the results page and have provided an email address.
+
+```python
+
+import httplib2
+
+headers = {
+  'Content-type': 'application/json',
+  'Usercity-Auth-Token': 'c1550bd0-e187-4bce-9044-846eb89cad8f'
+  }
+
+payload = {
+  "phone": "995551234",
+  "email": "steve.walsh@compareglobalgroup.com",  
+  "vertical": "car_insurance",
+  "locale": "HK",  
+  "language": "ES",
+  "attributes": {
+    "usercityEventName": "postFromFunnel",
+  },
+  "source_url": "http://moneyhero.hk"
+}
+events_url = "http://moneyhero.hk/api/events/submit"
+
+http = httplib2.Http()
+http.request(events_url, 'POST', body = payload, headers = headers)
+
+```
+
+
 
 ### Required Query Parameters for Initial Event
 
@@ -151,6 +175,7 @@ attributes/application_form/completed |  has to be "true" for Salesforce Marketi
 ### Optional Parameters
 the payload should include all variables for the email template.
 e.g. travel insurance confirmation email
+
 Parameter | Description
 --------- | -----------
 attributes/application form/ name | variable to display in email template
