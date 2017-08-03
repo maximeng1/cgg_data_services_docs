@@ -85,6 +85,12 @@ email | Usercity uses the email address field to determine unique users and merg
 
 # Salesforce Marketing Cloud (Email)
 
+Type of Email | Status
+--------- | -----------
+Top 3 Products | https://compareglobalgroup.atlassian.net/wiki/spaces/RET/pages/104398931/Top+3+Products+Email+Status+Per+Country+Per+Vertical
+Abandoned Checkout | https://compareglobalgroup.atlassian.net/wiki/spaces/RET/pages/113187977/Abandoned+Checkout+Email+Status+Per+Country+Per+Vertical
+Order Confirmation | https://compareglobalgroup.atlassian.net/wiki/spaces/RET/pages/112105747/Order+Confirmation+Email+Per+Country+Per+Vertical
+
 ## Top 3 Products Email
 
 An email listing the top 3 results page products can be generated when customers reach the results page and have provided an email address.
