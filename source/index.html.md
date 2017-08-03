@@ -87,7 +87,7 @@ email | Usercity uses the email address field to determine unique users and merg
 
 Type of Email | Status
 --------- | -----------
-Top 3 Products | https://compareglobalgroup.atlassian.net/wiki/spaces/RET/pages/104398931/Top+3+Products+Email+Status+Per+Country+Per+Vertical
+Top 3 Products | <a href="https://compareglobalgroup.atlassian.net/wiki/spaces/RET/pages/104398931/Top+3+Products+Email+Status+Per+Country+Per+Vertical"> Status</a>
 Abandoned Checkout | https://compareglobalgroup.atlassian.net/wiki/spaces/RET/pages/113187977/Abandoned+Checkout+Email+Status+Per+Country+Per+Vertical
 Order Confirmation | https://compareglobalgroup.atlassian.net/wiki/spaces/RET/pages/112105747/Order+Confirmation+Email+Per+Country+Per+Vertical
 
